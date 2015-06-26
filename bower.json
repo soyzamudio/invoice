@@ -1,0 +1,19 @@
+{
+  "name": "invoice",
+  "version": "1.0.0",
+  "homepage": "https://github.com/soyzamudio/invoice",
+  "authors": [
+    "Jose Zamudio <jzamudio@popsugar.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.4.1",
+    "angular-messages": "~1.4.1",
+    "angular-ui-router": "~0.2.15",
+    "jquery": "~2.1.4",
+    "lodash": "~3.9.3",
+    "moment": "~2.10.3",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0"
+  }
+}
