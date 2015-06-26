@@ -1,21 +1,21 @@
 doctype html
-html(lang='en', ng-app='invoice')
+html(lang='en', ng-app='app')
   head
     meta(charset='utf-8')      
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    title Angular Prototype
+    title Invoice
     link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/index.css')
+    link(rel='stylesheet', href='/scss/main.css')
     link(rel='shortcut icon', href='/favicon.ico')
-      
+
     //if lt IE 9
       script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')       
       script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
   body
-    include ./views/nav/nav
-
+    include ./app/modules/components/nav/nav
+    
     .container-fluid
       .row
         .col-xs-12
@@ -28,5 +28,8 @@ html(lang='en', ng-app='invoice')
     script(src='/vendor/lodash/lodash.js')
     script(src='/vendor/moment/moment.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
-
-    script(src='/index.js')
+       
+    script(src='/app/app.js')
+    script(src='/app/config/misc.js')
+    script(src='/app/modules/pages/home/home.js')
+    script(src='/app/modules/components/nav/nav.js')
