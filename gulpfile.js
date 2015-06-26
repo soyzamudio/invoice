@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
+var coffee = require('gulp-coffee');
 var less = require('gulp-less');
 var lint = require('gulp-jshint');
 var copy = require('gulp-copy');
@@ -11,6 +12,7 @@ var concat = require("gulp-concat");
 var paths = {
   filesrc:  ['./client/**/*', './server/**/*', './test/**/*'],
   jadesrc:  ['./client/**/*.jade'],
+  coffeesrc: ['./client/**/*.coffee', './server/**/*.coffee'],
   lesssrc:  ['./client/**/*.less'],
   lintsrc:  ['./client/**/*.js', './server/**/*.js', './test/**/*.js'],
   babelsrc: ['./client/**/*.js'],
@@ -18,13 +20,19 @@ var paths = {
   destination: './public'
 };
 
-gulp.task('build', ['jade', 'less', 'lint', 'babel', 'copy']);
+gulp.task('build', ['jade', 'less', 'lint', 'babel']);
 gulp.task('default', ['build', 'watch']);
 
 gulp.task('jade', function() {
   gulp.src(paths.jadesrc)
     .pipe(jade({pretty: true, doctype: 'html'}))
     .on('error', console.error.bind(console))
+    .pipe(gulp.dest(paths.destination));
+});
+
+gulp.task('coffee', function() {
+  gulp.src(paths.coffeesrc)
+    .pipe(coffee({bare: true}).on('error', gutil.log))
     .pipe(gulp.dest(paths.destination));
 });
 
@@ -49,11 +57,6 @@ gulp.task('babel', function() {
     .on('error', console.error.bind(console))
     .pipe(maps.write("."))
     .pipe(gulp.dest(paths.destination));
-});
-
-gulp.task('copy', function() {
-  gulp.src(paths.mediasrc)
-    .pipe(copy(paths.destination, {prefix:1}));
 });
 
 gulp.task('watch', function() {
