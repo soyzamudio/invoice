@@ -1,5 +1,7 @@
 angular.module('app.pages')
-.controller 'HomeController', [ '$scope', '$parse', ($scope, $parse) ->
-  _.extend $scope,
-    test: 'testing'
+.controller 'HomeController', [
+  '$scope'
+  ($scope) ->
+    _.extend $scope,
+      test: 'testing'
 ]

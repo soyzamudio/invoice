@@ -1,17 +1,16 @@
 nav.navbar.navbar-default(ng-controller='NavBarController')
   .container
     .navbar-header
-      a.navbar-brand(href="#") ZV Services
+      a.navbar-brand(ui-sref='home') ZV Services
     ul.nav.navbar-nav
       li.dropdown
-        a.dropdown-toggle(href="#", 
-          data-toggle="dropdown",
+        a.dropdown-toggle(data-toggle="dropdown",
           role="button",
           aria-haspopup="true",
           aria-expanded="false") Agencias
           span.caret
         ul.dropdown-menu
-          li: a(href="#") Agencias
+          li: a(ui-sref='retailers.list') Agencias
           li: a(href="#") Crear Agencia
       li: a(href='#') Reportes
       li.pull-right: a(href='#') Salir
