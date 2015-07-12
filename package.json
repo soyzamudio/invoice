@@ -24,7 +24,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server/index.js",
-    "localhost": "MONGO_URL=mongodb://localhost/invoice-dev PORT=3000 gulp",
+    "localhost": "MONGO_URL=mongodb://localhost/invoice-dev PORT=3000 nodemon build/server/index.js",
     "preinstall": "rm -rf node_modules public",
     "postinstall": "bower install && gulp"
   },
@@ -33,6 +33,7 @@
     "async": "^1.2.1",
     "babel": "^5.6.11",
     "bcrypt": "^0.8.3",
+    "csv-to-json": "^0.1.2",
     "good": "^6.2.0",
     "good-console": "^5.0.2",
     "hapi": "^8.6.1",

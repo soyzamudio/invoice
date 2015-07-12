@@ -1,4 +1,24 @@
 nav.navbar.navbar-default(ng-controller='NavBarController')
-  .container-fluid
+  .container
     .navbar-header
-      a.navbar-brand(href="#") {{test}}
+      a.navbar-brand(href="#") ZV Services
+    ul.nav.navbar-nav
+      li.dropdown
+        a.dropdown-toggle(href="#", 
+          data-toggle="dropdown",
+          role="button",
+          aria-haspopup="true",
+          aria-expanded="false") Agencias
+          span.caret
+        ul.dropdown-menu
+          li: a(href="#") Agencias
+          li: a(href="#") Crear Agencia
+      li: a(href='#') Reportes
+      li.pull-right: a(href='#') Salir
+    .search-bar.pull-right
+      form(ng-submit='searchStore(storeName)')
+        input.form-control(type='text', 
+          placeholder='Buscar Agencia', 
+          ng-model='storeName')
+        button.btn.btn-black
+          span.ion.ion-ios-search-strong
